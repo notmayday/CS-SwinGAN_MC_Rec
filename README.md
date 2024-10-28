@@ -88,7 +88,9 @@ python3 difference_hot.py
 
 We have established a checkpoint based on our ongoing work. For optimal results, we recommend training your own CS-SwinGAN_MC_Rec model.
 <br />
-[Brain_T2_poisson_30%](https://drive.google.com/file/d/1zDejBRz1FJR8j9NtL1oaRe-YLITNyax7/view?usp=drive_link)
+
+[Brain_T2_cartesian_20%](https://drive.google.com/file/d/1zDejBRz1FJR8j9NtL1oaRe-YLITNyax7/view?usp=drive_link)
+[Brain_T2_cartesian_30%](https://drive.google.com/file/d/1zDejBRz1FJR8j9NtL1oaRe-YLITNyax7/view?usp=drive_link)
 
 
 # Citation
@@ -99,5 +101,5 @@ You are encouraged to modify/distribute this code. However, please acknowledge t
 
 # Acknowledgements
 
-This code uses libraries from [KIGAN], [SwinTransformer],[PatchGAN],[SwinGAN] repositories.
+This code uses libraries from [Subsampled-Brain-MRI-Reconstruction-by-Generative-Adversarial-Neural-Networks](https://github.com/ItamarDavid/Subsampled-Brain-MRI-Reconstruction-by-Generative-Adversarial-Neural-Networks) and [SwinGAN](https://github.com/learnerzx/SwinGAN) repositories.
 # CS-SwinGAN for multi-coil MRI reconstruction
