@@ -1,6 +1,6 @@
 # CS-SwinGAN for multi-coil MRI reconstruction
 
-Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction described in the paper "".
+Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction described in the paper "CS-SwinGAN: a swin-transformer-based generative adversarial network with compressed sensing preprocessing for multi-coil MRI reconstruction".
 <br />
 <br />
 *Refreshed Pre-procoessing for Multi-coil Raw k-space data
