@@ -77,8 +77,10 @@ python3 train.py
 
 <br />
 
+```
 python3 difference_hot.py 
 
+```
 <br />
 <br />
 
