@@ -3,6 +3,7 @@
 Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction described in the paper "".
 
 <br />
+<br />
 
 <div align="center">
   <figure> 
@@ -11,6 +12,7 @@ Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction 
   </figure> 
 </div>
 
+<br />
 <br />
 
 <div align="center">
@@ -21,6 +23,7 @@ Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction 
 </div>
 
 <br />
+<br />
 
 <div align="center">
   <figure> 
@@ -30,7 +33,7 @@ Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction 
 </div>
 
 <br />
-
+<br />
 
 ## Dependencies
 
