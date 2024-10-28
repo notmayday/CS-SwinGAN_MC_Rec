@@ -13,6 +13,15 @@ Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction 
 
 <div align="center">
   <figure> 
+    <img src="./asserts/preprocessing_block.png" width="800px">
+    <figcaption>Pre-processing Block for Multi-coil MRI Raw Data</figcaption> 
+  </figure> 
+</div>
+
+<br />
+
+<div align="center">
+  <figure> 
     <img src="./asserts/framework.png" width="800px">
     <figcaption>Full Framework of CS-SwinGAN for Multi-coil MRI Reconstruction</figcaption> 
   </figure> 
