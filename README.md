@@ -84,6 +84,12 @@ python3 difference_hot.py
 <br />
 <br />
 
+## Trained checkpoint download
+
+We have established a checkpoint based on our ongoing work. For optimal results, we recommend training your own CS-SwinGAN_MC_Rec model.
+<br />
+[Brain_T2_poisson_30%](https://drive.google.com/file/d/1zDejBRz1FJR8j9NtL1oaRe-YLITNyax7/view?usp=drive_link)
+
 
 # Citation
 You are encouraged to modify/distribute this code. However, please acknowledge this code and cite the paper appropriately.
