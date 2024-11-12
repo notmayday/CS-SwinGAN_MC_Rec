@@ -103,46 +103,10 @@ class fastMRIdataset(Dataset):
 
         mask_path = args.mask_path
 
-
-        # if args.mask_type=='radial':
-        #     maskfile_path = './Masks/radial/radial_{}.tif'.format(args.sampling_percentage)
-        #     #mask_shift = cv2.imread(r'./Masks/radial/radial_50.tif', 0) / 255
-        #     mask_shift = cv2.imread(maskfile_path, 0) / 255
-        #     mask_shift = np.fft.fftshift(mask_shift)
-        #
-        #     self.masks = mask_shift
-        #     self.maskedNot = 1 - mask_shift
-
         with open(mask_path, 'rb') as pickle_file:
             masks_dictionary = pickle.load(pickle_file)
             self.masks = masks_dictionary['mask1']
             self.maskedNot = 1 - masks_dictionary['mask1']
-
-        # elif args.mask_type=='random':
-        #     with open(mask_path, 'rb') as pickle_file:
-        #         masks_dictionary = pickle.load(pickle_file)
-        #         self.masks=masks_dictionary['mask1']
-        #         self.maskedNot = 1 - masks_dictionary['mask1']
-        # else:
-        #     masks_dictionary = loadmat(mask_path)
-        #     try:
-        #         self.masks = masks_dictionary['Umask']
-        #         self.maskedNot = 1 - masks_dictionary['Umask']
-        #     except:
-        #         try:
-        #             self.masks = masks_dictionary['maskRS2']
-        #             self.maskedNot = 1-masks_dictionary['maskRS2']
-        #         except:
-        #             self.masks = masks_dictionary['population_matrix']
-        #             self.maskedNot = 1 - masks_dictionary['population_matrix']
-
-        # with open(mask_path, 'rb') as pickle_file:
-        #     masks_dictionary = pickle.load(pickle_file)
-
-        # self.masks = np.dstack((masks_dictionary['mask0'], masks_dictionary['mask1'], masks_dictionary['mask2']))
-
-
-        #random noise:
         self.minmax_noise_val = args.minmax_noise_val
 
     def __len__(self):
@@ -184,22 +148,6 @@ class fastMRIdataset(Dataset):
         # masked_Kspace += np.random.uniform(low=self.minmax_noise_val[0], high=self.minmax_noise_val[1],
         #                                    size=masked_Kspace.shape)*self.maskedNot
         # masked_Kspace += self.minmax_noise_val[1] * np.random.randn(*masked_Kspace.shape) * self.maskedNot
-        # plt.imshow(undersampled_img[:,:], cmap='gray')
-        # plt.title('Image')
-        # plt.show()
-        # plt.imshow(abs(image[0,:, :]), cmap='gray')
-        # plt.title('Image')
-        # plt.show()
-        # masked_Kspace_2 = self.ifft2(masked_Kspace[0,:,:]+1j*masked_Kspace[1,:,:])
-        # plt.imshow(masked_Kspace_2[0,:,:], cmap='gray')
-        # plt.title('Image')
-        # plt.show()
-        # plt.imshow(kspace[0,:,:], cmap='gray')
-        # plt.title('Image')
-        # plt.show()
-        # plt.imshow(kspace[1,:,:], cmap='gray')
-        # plt.title('Image')
-        # plt.show()
         return masked_Kspace, kspace, image, undersampled_img
 
     def __getitem__(self, i):
@@ -213,9 +161,7 @@ class fastMRIdataset(Dataset):
             #temp = f['data'][:, :, :].transpose((1,2,0))
             #imgs = temp[:, :, slice_num - add:slice_num + add + 1] # target images need to be permuted
             kspaces = f['cropped_kspaces'][slice_num-add:slice_num+add+1, coil_num, :, :, ]
-            # snr = np.mean(abs(kspaces)) / np.std(abs(kspaces))
-            # if snr > 0.75:  # Skip to the next iteration if SNR is greater than 1
-            #     return self.__getitem__((i) % len(self.ids))
+
             imgs = f['cropped_imgs'][slice_num-add:slice_num+add+1, coil_num, :, :, ]
             rss_imgs = f['rss_imgs'][slice_num-add:slice_num+add+1, :, :, ]
             kspaces_multicoil = f['cropped_kspaces'][slice_num-add:slice_num+add+1, : , :, :, ]
@@ -235,10 +181,7 @@ class fastMRIdataset(Dataset):
         for sliceNum in range(self.num_input_slices):
             img = imgs[:, :, sliceNum]
             img = abs(imgs)
-            # sensitivity_map = img / rss_imgs
-            # sensitivity_map = np.transpose(sensitivity_map, (2, 0, 1))
             img = (img - np.min(img)) / (np.max(img) - np.min(img))
-            # kspace = np.squeeze(kspaces)
             img = np.squeeze(img)
             kspace = self.fft2(img)
             kspace_ori = kspaces[:, :, sliceNum]
@@ -256,17 +199,7 @@ class fastMRIdataset(Dataset):
                 target_img = slice_full_img
                 ori_Kspace = slice_masked_Kspace
                 ###############################
-            # plt.imshow(target_img[0, :, :], cmap='gtarget_imgtarget_img ray')
-            # plt.axis('off')
-            # plt.show()
-            # # plt.imshow(sensitivity_map[0,:, :], cmap='gray')
-            # # plt.axis('off')
-            # # plt.show()
-            # # plt.imshow(rss_imgs[0, :, :], cmap='gray')
-            # # plt.axis('off')
-            # # plt.show()
-            #
-            # kk=0
+
 
         return {'masked_Kspaces': torch.from_numpy(masked_Kspaces), 'target_Kspace': torch.from_numpy(target_Kspace),
                 'target_img': torch.from_numpy(target_img),'ori_Kspace': torch.from_numpy(ori_Kspace),'sensitivity_map': torch.from_numpy(sensitivity_map)}
