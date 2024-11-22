@@ -17,7 +17,7 @@ def fft2(img):
     return np.fft.fft2(np.fft.fftshift(img,axes=[2,3]))
 
 directory_path='/media/samuel/storage/UIH/TEMP/data/h5/200/'
-save_path='/media/samuel/storage/UIH/V3+/data/h5/Test_T3_brain/'
+save_path='/media/samuel/storage/UIH/V3+/data/h5/mc/'
 h5_files = [file for file in os.listdir(directory_path) if file.endswith('file_brain_AXT2_210_2100212.h5')]
 size=np.size(h5_files)
 new_size=320
