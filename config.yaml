@@ -4,7 +4,7 @@ dataset: "fastMRI"                                                      # Datase
 train_data_dir: "/media/samuel/storage/UIH/V3+/data/h5/Train_T2_brain"                                    # Training files dir, should contain hdf5 preprocessed data.
 val_data_dir: "/media/samuel/storage/UIH/V3+/data/h5/Val_T2_brain"      
 output_dir: "OUTPUT_PATH"                                           # Directory to save checkpoints and tensorboard data.
-sampling_percentage: 30                                  # Sampling mask precentage (provided with the code 20%,30% and 50% sampling masks of 320X320).
+sampling_percentage: 30                                  # Sampling mask precentage (provided with the code 10%,20% and 30% sampling masks of 320X320).
 mask_type: poisson             #mask: radial,cartesian,random,gaussian,poisson
 num_input_slices: 1                                                 
 img_size: 320                                                      # Input image size (320X320).
