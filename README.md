@@ -96,7 +96,7 @@ python3 difference_hot.py
 
 We have established a checkpoint based on our ongoing work. For optimal results, we recommend training your own CS-SwinGAN_MC_Rec model.
 <br />
-[Brain_T2_cartesian_10%]
+[Brain_T2_cartesian_10%](https://drive.google.com/file/d/1vCrBJbypJ3mpEsYFNKTZTYuf5dNDmUbZ/view?usp=drive_link)
 <br />
 [Brain_T2_cartesian_20%](https://drive.google.com/file/d/1O1WrO5eypboHumXVGQ4eSgQRQaheoR_g/view?usp=drive_link)
 <br />
