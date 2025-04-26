@@ -100,7 +100,7 @@ We have established a checkpoint based on our ongoing work. For optimal results,
 <br />
 [Brain_T2_cartesian_20%](https://drive.google.com/file/d/1O1WrO5eypboHumXVGQ4eSgQRQaheoR_g/view?usp=drive_link)
 <br />
-[Brain_T2_cartesian_30%]
+[Brain_T2_cartesian_30%](https://drive.google.com/file/d/1MNvC1cjPBbpvsHGVyU7y6U3rUlKQLD3s/view?usp=drive_link)
 
 
 # Citation
