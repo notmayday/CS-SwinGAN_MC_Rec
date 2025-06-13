@@ -3,7 +3,7 @@
 Official PyTorch implementation of CS-SwinGAN for multi-coil MRI reconstruction described in the paper "CS-SwinGAN: a swin-transformer-based generative adversarial network with compressed sensing pre-enhancement for multi-coil MRI reconstruction".
 <br />
 <br />
-DOI:https://doi.org/10.1016/j.bspc.2025.108120
+DOI: https://doi.org/10.1016/j.bspc.2025.108120
 <br />
 <br />
 *Refreshed Pre-procoessing for Multi-coil Raw k-space data
@@ -124,6 +124,9 @@ author = {Haikang Zhang and Zongqi Li and Qingming Huang and Luying Huang and Yi
 keywords = {Multi-coil MRI reconstruction, Deep learning, Loss separation, K-space noise suppression, Transformer},
 abstract = {Magnetic resonance imaging (MRI) reconstruction from undersampled k-space data is a crucial area of research due to its potential to reduce scan times. Current deep learning approaches for MRI reconstruction often combine frequency-domain and image-domain losses, optimizing their sum. However, this approach can lead to blurry results, as it averages two fundamentally different types of losses. To address this issue, we propose CS-SwinGAN for multi-coil MRI reconstruction, a swin-transformer-based generative adversarial network with a Compressed Sensing Block for pre-enhancement. The newly introduced Compressed Sensing Block not only facilitates the separation of frequency-domain and image-domain losses but also serves as a pre-enhancement stage that promotes sparsity and suppresses aliasing, thereby enhancing reconstruction quality. We evaluate CS-SwinGAN in both standard MRI reconstruction tasks and under varying noise levels in k-space to assess its performance across diverse conditions. Numerical experiments demonstrate that our framework outperforms state-of-the-art methods in both conventional reconstruction and noise suppression scenarios. The source code is available at https://github.com/notmayday/CS-SwinGAN_MC_Rec.}
 }
+
+<br />
+
 # Acknowledgements
 
 This code uses libraries from [Subsampled-Brain-MRI-Reconstruction-by-Generative-Adversarial-Neural-Networks](https://github.com/ItamarDavid/Subsampled-Brain-MRI-Reconstruction-by-Generative-Adversarial-Neural-Networks) and [SwinGAN](https://github.com/learnerzx/SwinGAN) repositories.
